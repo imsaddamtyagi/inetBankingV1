@@ -1,0 +1,221 @@
+Hybrid FW Diagram:
+
+1) Page Objects: All the classes.
+2) Utilities: ReadConfig.java/ Reporting.java/ XLUtils.java.
+3) Config Files: pom.xml/Extent-config.xml/Log4g.properties/Config.properties.
+4) Test cases
+5) TestNG.xml,pom.xml.
+6) MavenRun.bat
+7) Jenkins.
+___________________________________________________________________________
+
+Stages in FW: 
+Phase 1: Implementation.
+Phase 2: Execution.
+Phase 3: Maintenance.
+
+
+
+Phase 1: Create Maven Project->Update pom.xml-> Create Page Objects -> Create Basic Test Case-> Add logs to the test case-> Read values from Properties file
+-> Run on browser-> Add extent report-> Create DD test cases.
+
+Phase 2 : Run test cases with pom.xml files
+          Run test cases with Maven Command Line Interface.
+	  Run test cases with run.bat.
+	  Run test cases with Jenkins using bat file.
+
+Phase 3: Create Repo in GitHUB.
+         Commit the project code in local repo.
+	 Pust the project code to GITHUB remote repo from local GIT repo.
+
+
+__________________________________________________________________________________________________________________________
+Phase 1: Implementation
+_______________________
+
+Use Eclipse Photon for Maven project.
+Create a Maven Project:
+Check the Folder structure.
+Now go the pom.xml files and under the " </dependencies>" tag put all the dependencies from "mvn repository" website.
+
+
+
+username: mngr34926
+password: amUpenu
+
+Now Add log 4j : log4j.jar/log4j.properties
+Add log4j.properties files manually in project by downloading from internet.
+
+Now add properties files in project
+extent report: jars/extent-config.xml
+Listener(Reporting.java).
+Add entry in TestNG.xml file.
+DD test cases. : Apache POI->xlsx file-> XLUtils.java
+@DataProvider
+
+Execute only failed test cases. -> testng-failed.xml
+
+_____________________________________________________________________________________________________________________________
+Phase 2: Execution    [In multiple ways]
+__________________
+
+i)Execute using pom.xml file. -> Add plugins -> compiler and surefire plugin. [Carefully and use updated one.]
+                                 Plugins are used to run your maven project.
+				 Add JDK in eclipse instaed of JRE.
+
+
+ii) Run through cmd(Maven CLI) : mvn clean install.
+ Maven should be installed in Computer.
+
+
+iii) Run through run.bat
+
+      Go to the project folder and create a run.bat file and paste below commands in it
+      C:\Users\Sofiya\git\inetBankingRepo\inetBankingV1
+      mvn clean install
+
+iv)  Jenkins
+     
+     In any project mainly 2 team works together
+     Developers writes codes. Dev team
+     QA team.
+
+     Developers working on multiple models m1,m2,m3.
+     Also QA works for multiple models.
+     Automation testers automates test cases by using eclipse.
+
+     There is another team DevOps team. This team share the task from both teams.
+     All 3 works together.
+     devops team will do some jobs of developers and some jobs of testers.
+     EOD all the people will keeps codes in common location i.e Repository [Git/Github].
+     Developer doesn't create the build.
+
+     DevOps use this code to create the Build and make executable files.               // Developer side work of Devops team.
+     The use MAVEN as a build tool.
+
+      QA tester store their codes in Repos too.
+
+      Devops team takes automation test cases and using JENKISN tools they run test cases.
+      Sanity and Smoke test cases after executed.
+
+      If a test passed in JENKINS then everbody got emails.
+      QA downloads build from Jenkins.
+
+      This is called Contineous Integration.
+
+    Genkins will be installed in Dev environment not in QA environment.
+
+    CI tools are : Maven/Jenkins/Git/GitHub.
+
+Download Jenkins : It is a Open source product.
+
+Go to browser "http://localhost:8080"
+
+C:\Program Files (x86)\Jenkins\secrets\initialAdminPassword
+
+copy password and create your password.  -> Install suggested plugins-> set password and continue.
+
+
+Now in Jenkins 
+
+"FreeStyle Project" -> Under Build environment-> add build step-> "Execute windows batch command"->
+
+cd C:\Users\Sofiya\git\inetBankingRepo\inetBankingV1
+run.bat   
+under build paste this.
+OR we can just download "jenkins.war"file and run this.    I have doen this way only.
+
+++++++
+++++++
+++++++
+
+
+Now we will create a "Maven" project in jenkins.
+
+Now go to "Manage jenkins" and "Manage Plugin" and add "Maven Integration".
+
+Add JDK there from "Global tools configuration"-> JAVA HOME PATH from environment variable.
+Also add MAVEN HOME in jenkins from environment variable.
+Now create a maven project -> Add pom.xml file location-> "clean install" in maven and execute.
+
+_____________________________________________________________________________________________________________
+
+Phase 3: Maintenance.
+____________________________________
+
+Genkins server is configured into Dev environment-> and our eclispe is in QA envt.
+Hence we need to use Github.
+
+QA Team <-> DevOps team<-> Dev team.
+
+DevOpst team gets code from repository and creates Build.
+This build will be created by Maven.
+
+QA team check in their code in Repo.
+
+Genkins gets code from repo-> and will execute against the build, if the basic sanity is passed it will sends email to team.
+If the build is successfull ,we can download this build and continue will the Functional test cases.
+This is CI process.
+
+Git and GitHub: 
+
+We have local repos in our system.
+Everyone will have their local repos on their machines.
+Everybody will push their code to remote/global repo.
+
+Git for local system.
+Local to Git-> Git to Github.
+
+
+      (Working Directory in Eclispe)                          ->  Staging area                           ->  Git repo                -> Git Hub
+Git: Untracked file(Files in eclispe that are not in Git repo)-> Tracked File (After add command in git) -> Commited File   -> Push  -> Remote file in Github. 
+
+
+Get a remote repo URL from new Github repo.
+Create a local repo-> Got to project folder-> and open git there-> "Open Git bash here" ->
+
+Git commands:
+
+git init            // Creates an empty git repository i.e. local repo
+git remote add origin "https://github.com/imsaddamtyagi/TestingHBFWDemo.git"     // Assocaite local repo to remote repo.
+git status        //Somtimes there are some files which are already commited to git local // so we need not to commit again and again  -> "GIT STATUS" to check the scenerio.               
+git add -A      //  We need to send all these files to STAGING AREA       //now check status again , everthing is GREEN now.
+git config  --gloabl user.name "imsaddamtyagi"     // 
+git config  --global  user.email "imsaddamtyagi@gmail.com"
+git commit -m "This is the First commit using git tool"
+git push -u origin master    // Enter username and password in the prompt screen. 
+
+
+
+If we need to push any file from Github:
+
+Create a demo text file in Github repo.
+Not use below command:
+
+git pull origin master
+
+ Now check in your eclise.
+
+ Now make some changes in this file from eclipse.
+
+ Now check git status   [it will say 1 file need to be commit]
+ Now add this file in STAGING AREA
+
+ git add -A
+ git commit -m "This is my second commit bcoz i updated a text file"
+ git push -u origin master
+ git status        // All seems good.
+
+
+git pull origin master --> pull the files from Github to git.
+
+
+Now in Jenkins :
+
+Go create new maven project-> under "Source code management" we need to give the repository URL in "repository URL".
+and leave pom.xml as it is and enter "clean install"
+and execute it my Jenkins.
+______________________________________________________________________________________________________________
+
+
+
