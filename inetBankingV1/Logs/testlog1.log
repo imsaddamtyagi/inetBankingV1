@@ -158,3 +158,35 @@
 2020-04-06 13:57:34,529 [main] INFO ebanking - Entered username
 2020-04-06 13:57:34,613 [main] INFO ebanking - Entered password
 2020-04-06 13:57:36,234 [main] INFO ebanking - Login test passed
+2020-04-06 14:14:18,908 [main] INFO ebanking - URL is loaded
+2020-04-06 14:14:19,084 [main] INFO ebanking - Entered username
+2020-04-06 14:14:19,216 [main] INFO ebanking - Entered password
+2020-04-06 14:14:48,471 [main] INFO ebanking - Login test passed
+2020-04-06 14:26:37,401 [main] INFO ebanking - URL is loaded
+2020-04-06 14:26:37,573 [main] INFO ebanking - Entered username
+2020-04-06 14:26:37,661 [main] INFO ebanking - Entered password
+2020-04-06 14:26:39,490 [main] INFO ebanking - Login test passed
+2020-04-06 14:32:49,743 [main] INFO ebanking - URL is loaded
+2020-04-06 14:32:49,900 [main] INFO ebanking - Entered username
+2020-04-06 14:32:50,032 [main] INFO ebanking - Entered password
+2020-04-06 14:32:51,769 [main] INFO ebanking - Login test passed
+2020-04-06 14:35:17,012 [main] INFO ebanking - URL is loaded
+2020-04-06 14:35:17,173 [main] INFO ebanking - Entered username
+2020-04-06 14:35:17,257 [main] INFO ebanking - Entered password
+2020-04-06 14:35:19,542 [main] INFO ebanking - Login test passed
+2020-04-06 16:32:15,061 [main] INFO ebanking - URL is loaded
+2020-04-06 16:32:15,340 [main] INFO ebanking - Entered username
+2020-04-06 16:32:15,476 [main] INFO ebanking - Entered password
+2020-04-06 16:32:17,829 [main] INFO ebanking - Login test passed
+2020-04-06 16:34:49,818 [main] INFO ebanking - URL is loaded
+2020-04-06 16:34:50,171 [main] INFO ebanking - Entered username
+2020-04-06 16:34:50,283 [main] INFO ebanking - Entered password
+2020-04-06 16:34:52,194 [main] INFO ebanking - Login test passed
+2020-04-06 17:10:12,817 [main] INFO ebanking - URL is loaded
+2020-04-06 17:10:13,315 [main] INFO ebanking - Entered username
+2020-04-06 17:10:13,424 [main] INFO ebanking - Entered password
+2020-04-06 17:10:15,741 [main] INFO ebanking - Login test passed
+2020-04-06 17:33:47,319 [main] INFO ebanking - URL is loaded
+2020-04-06 17:33:47,551 [main] INFO ebanking - Entered username
+2020-04-06 17:33:47,642 [main] INFO ebanking - Entered password
+2020-04-06 17:33:49,281 [main] INFO ebanking - Login test passed
